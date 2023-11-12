@@ -4,7 +4,7 @@ Is a demonstartion on how to populate form questions from a Google Sheet.
 
 ## Google Clasp
 
-Google Clasp to pull-push to Google Apps Script and keep code backed up in GitHub
+[Google Clasp](https://github.com/google/clasp) to pull-push to Google Apps Script and keep code backed up in GitHub
 
 ## GitHub Repository
 
