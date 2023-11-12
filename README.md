@@ -2,10 +2,6 @@
 
 Is a demonstartion on how to populate form questions from a Google Sheet.
 
-## Google Clasp
-
-[Google Clasp](https://github.com/google/clasp) to pull-push to Google Apps Script and keep code backed up in GitHub
-
 ## GitHub Repository
 
 <https://github.com/jwilleke/Where-are-you-From>
@@ -26,10 +22,11 @@ Pulls data to populate the form from SpreadSheet: <https://docs.google.com/sprea
 
 And the Form: <https://docs.google.com/forms/d/1nwQvktsJHG1uuGnK3AO4JaLKF0ZJh2eixDzVVnLkG1Q/edit/viewform>
 
-## CLASP
+## Google CLASP
 
-<https://github.com/google/clasp>
-<https://medium.com/geekculture/how-to-write-google-apps-script-code-locally-in-vs-code-and-deploy-it-with-clasp-9a4273e2d018>
+[Google Clasp](https://github.com/google/clasp) to pull-push to Google Apps Script and keep code backed up in GitHub
+
+[Google Clasp HowTo](https://medium.com/geekculture/how-to-write-google-apps-script-code-locally-in-vs-code-and-deploy-it-with-clasp-9a4273e2d018)
 
 The four commands to master in clasp are:
 
