@@ -11,33 +11,19 @@ const GOOGLE_FORM_ID = '1nwQvktsJHG1uuGnK3AO4JaLKF0ZJh2eixDzVVnLkG1Q'; //<<Put y
 const GOOGLE_DATA_SHEET_NAMED = 'AllCities'; // sheet to fill in form data
 let form = FormApp.openByUrl(GOOGLE_FORM_URL);
 const ss = SpreadsheetApp.openByUrl(GOOGLE_DATA_SHEET_URL);
-const [headers, ...sheetData] = ss.getSheetByName(GOOGLE_DATA_SHEET_NAME).getDataRange().getDisplayValues(); // breaks headers and sheetData into seperate arrays
+// headers is a single Arraya of values from the first line
+// sheetData is an Array of row values from every row in sheet
+const [headers, ...sheetData] = ss.getSheetByName(GOOGLE_DATA_SHEET_NAME).getDataRange().getDisplayValues(); // @NIFTY breaks headers and sheetData into seperate arrays
 
 
 function myTestFunction() {
-  const cityDimenion = 4;
-  let cityValues = filterBy(1, sheetData, "Japan"); //continent
-  //  contryValues(thisFormItem, continentValues)
-  //let bigCityValues = get2ndDimensionValues(cityValues, cityDimenion);
-  cityValues = [...new Set(cityValues)];
-  Logger.log(`cityValues[${0}] ${cityValues[0]}`);
-  if (cityValues.length >= 900) {
-    Logger.log(`cityValues has ${cityValues.length} items`);
-    // 8 is the dimension in 
-    //var citySortedby = sortByNthElementSecondDimension(cityValues, 8);
-    //citySortedby = [...new Set(citySortedby)];
-    const slicedArray = cityValues.slice(0, 100);
-    let finalCityValues = get2ndDimensionValues(slicedArray, cityDimenion);
-    Logger.log(`finalCityValues[${0}] ${finalCityValues[0]}`);
-    createConditonalForm(form, headers[2], FormApp.ItemType.LIST, finalCityValues);
-  } else {
-    createConditonalForm(form, headers[2], FormApp.ItemType.LIST, cityValues);
-  }
-  Logger.log(` cityValues => Done???`);
-
+  Logger.log(`headers: ${headers}`);
+  Logger.log(`sheetData[3]: ${sheetData[3]}`);
+  Logger.log(`sheetData: ${sheetData}`);
 }
 
 /**
+ * Populates a form with multiple questions based on data from GOOGLE_DATA_SHEET_URL
  * createConditonalForm(form, title, itemType, isRequired, itemValues)
  */
 function myFunction() {
@@ -147,8 +133,8 @@ function filterBy(rowNumber, data, filterBy) {
       filtered.push(row)
     }
   }
-  filtered = [...new Set(filtered)]; // Nifty trick to eliinate duplicates.
-  Logger.log(`filterBy:${filterBy} Data: ${data}`)
+  filtered = [...new Set(filtered)]; // @NIFTY trick to eliinate duplicates in an array
+  //Logger.log(`filterBy:${filterBy} Data: ${data}`)
   return filtered;
 }
 
